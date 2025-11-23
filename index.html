@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипкиды</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Шипкиды</a>
+            <nav class="nav">
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Найти ребёнка...">
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-header">
+                <h2 class="section-title">Родители:</h2>
+                <button id="toggleFilters" class="toggle-btn">
+                    <span id="toggleText">свернуть</span>
+                    <span class="arrow">▼</span>
+                </button>
+            </div>
+            
+            <div class="selected-filters">
+                <span id="selectedFiltersInfo">Выбрано: 0 родителей</span>
+                <button id="clearFilters" class="clear-btn">Очистить</button>
+            </div>
+            
+            <div id="filtersContainer" class="filters-container expanded">
+                <div class="filters-grid">
+                    <!-- Теги родителей будут здесь -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shipkids-section">
+        <div class="container">
+            <div class="shipkids-grid">
+                <!-- Карточки шипкидов -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Все права на персонажей принадлежат их владельцам.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

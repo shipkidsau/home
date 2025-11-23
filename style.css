@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0F0F23;
+    --text-heading: #9099EF;
+    --text-primary: #A0AEC0;
+    --accent: #BB86FC;
+    --accent-hover: #9D67E3;
+    --border: #2D3748;
+    --bg-card: #16213E;
+    --bg-secondary: #1A1A2E;
+}
+
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Шапка */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: var(--text-heading);
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+    background: rgba(187, 134, 252, 0.1);
+}
+
+.search-container {
+    position: relative;
+}
+
+#searchInput {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2);
+}
+
+#searchInput::placeholder {
+    color: var(--text-primary);
+    opacity: 0.7;
+}
+
+/* Фильтры */
+.filters-section {
+    padding: 20px 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--text-heading);
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.toggle-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.filters-container.collapsed .arrow {
+    transform: rotate(-90deg);
+}
+
+.selected-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+#selectedFiltersInfo {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.clear-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Контейнер фильтров */
+.filters-container {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.filters-container.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.filters-container.expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filter-tag {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+    padding: 12px 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-tag.active {
+    background: var(--text-heading);
+    color: var(--bg-primary);
+    border-color: var(--text-heading);
+}
+
+.filter-tag.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Карточки шипкидов */
+.shipkids-section {
+    padding: 30px 0;
+}
+
+.shipkids-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    justify-content: center;
+}
+
+.shipkid-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 160px;
+}
+
+.shipkid-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.15);
+}
+
+.shipkid-image {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.shipkid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shipkid-info {
+    padding: 8px 4px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 40px;
+}
+
+.shipkid-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Подвал */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--text-primary);
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* АДАПТИВНОСТЬ */
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    #searchInput {
+        min-width: 150px;
+    }
+    
+    .filters-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 8px;
+    }
+    
+    .filter-tag {
+        padding: 10px 6px;
+        font-size: 0.8rem;
+        min-height: 45px;
+    }
+    
+    .shipkids-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+    }
+    
+    .shipkid-card {
+        height: 140px;
+    }
+    
+    .shipkid-image {
+        height: 100px;
+    }
+    
+    .filters-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* Очень маленькие телефоны */
+@media (max-width: 480px) {
+    .shipkids-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .shipkid-card {
+        height: 130px;
+    }
+    
+    .shipkid-image {
+        height: 90px;
+    }
+    
+    .shipkid-name {
+        font-size: 0.8rem;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .shipkids-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Десктоп */
+@media (min-width: 1025px) {
+    .shipkids-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 18px;
+    }
+    
+    .shipkid-card {
+        height: 170px;
+    }
+    
+    .shipkid-image {
+        height: 130px;
+    }
+}
+
+/* Большие экраны */
+@media (min-width: 1200px) {
+    .shipkids-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+
+
+
+
+
+
+/* Стили для страницы FAQ */
+.faq-section {
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--accent);
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-heading);
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(187, 134, 252, 0.05);
+}
+
+.faq-toggle {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: var(--text-heading);
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px 20px;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+/* Адаптивность для FAQ */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 15px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 15px 15px 15px;
+    }
+    
+    .faq-toggle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-question {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .faq-answer {
+        padding: 0 12px;
+        font-size: 0.9rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 12px 12px 12px;
+    }
+}
