@@ -297,13 +297,13 @@ body {
 }
 
 .shipkid-info {
-    padding: 8px 4px;
+    padding: 4px 4px;
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 40px;
+    min-height: 30px;
 }
 
 .shipkid-name {
@@ -538,4 +538,315 @@ body {
     .faq-item.active .faq-answer {
         padding: 0 12px 12px 12px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для страницы персонажа */
+.character-section {
+    padding: 30px 0;
+    min-height: calc(100vh - 200px);
+}
+
+.character-name {
+    font-size: 2.5rem;
+    color: var(--text-heading);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.character-main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.character-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+}
+
+.character-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ТОТ САМЫЙ ПРЯМОУГОЛЬНИК */
+.character-info-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--text-heading);
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.info-value {
+    color: var(--text-primary);
+    text-align: right;
+    flex-grow: 1;
+}
+
+/* Секции контента */
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.content-section:hover {
+    border-color: var(--accent);
+}
+
+.section-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(187, 134, 252, 0.05);
+}
+
+.section-header h2 {
+    color: var(--text-heading);
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.section-toggle {
+    color: var(--text-heading);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.content-section.collapsed .section-toggle {
+    transform: rotate(-90deg);
+}
+
+.section-content {
+    padding: 0 20px;
+    max-height: 5000px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.content-section.collapsed .section-content {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 20px;
+}
+
+.section-content p {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.links-container {
+    padding: 10px 0;
+}
+
+.links-container a {
+    color: var(--text-heading);
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.links-container a:hover {
+    color: var(--accent);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .character-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .character-name {
+        font-size: 2rem;
+    }
+    
+    .character-info-card {
+        padding: 20px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .info-value {
+        text-align: left;
+    }
+    
+    .section-header {
+        padding: 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .section-content {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .character-name {
+        font-size: 1.8rem;
+    }
+    
+    .character-info-card {
+        padding: 15px;
+    }
+    
+    .section-header {
+        padding: 12px;
+    }
+    
+    .section-content {
+        padding: 0 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Стили для футера */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-text {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-email {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+    color: var(--accent);
+}
+
+.support-btn {
+    background: var(--text-heading);
+    color: var(--bg-primary);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--text-heading);
+}
+
+.support-btn:hover {
+    background: transparent;
+    color: var(--text-heading);
+}
+
+/* Адаптивность футера */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Убираем голубое выделение при клике */
+* {
+    -webkit-tap-highlight-color: transparent;
 }
