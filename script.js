@@ -1,7 +1,7 @@
 // Данные шипкидов
 const shipkidsData = [
     { id: 1, name: "Абстракт", parents: ["Рипер", "Инк"], image: "images/abstract.jpg" },
-    { id: 2, name: "Алуреон", parents: ["Гено", "Эррор"], image: "images/alureon.jpg" },
+    { id: 2, name: "Алуреон", parents: ["Гено", "Эррор"], image: "images/alureon3.jpg" },
     { id: 3, name: "Анколи", parents: ["Рипер", "Гено"], image: "images/ankoli.jpg" },
     { id: 4, name: "Аномалия 64", parents: ["Эррор", "Киллер"], image: "images/anomaly64.jpg" },
     { id: 5, name: "Белладона", parents: ["Даст", "Ласт"], image: "images/belladonna.jpg" },
@@ -24,7 +24,7 @@ const shipkidsData = [
     { id: 22, name: "Вермилион", parents: ["Фатал Эррор", "Лавендер"], image: "images/vermillion.jpg" }
 ];
 
-// ТОЛЬКО родители (из ТЗ)
+// родители
 const parentsList = [
     "Все", "Блу", "Гено", "Даст", "Дрим", "Инк", "Киллер", "Колор", 
     "Кросс", "Ласт", "Найтмер", "Оутер", "Рипер", "Саенс", "Фатал Эррор", 
