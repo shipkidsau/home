@@ -33,13 +33,19 @@ const parentsList = [
 
 let selectedParents = [];
 let currentSearchTerm = "";
-let filtersExpanded = true;
+
+// Переменные для свайпа
+let isDragging = false;
+let startX = 0;
+let scrollLeft = 0;
 
 // Инициализация
 document.addEventListener('DOMContentLoaded', function() {
     renderFilters();
     renderShipkids();
     setupEventListeners();
+    setupSwipe();
+    setupMobileSearch();
 });
 
 // Рендер фильтров
@@ -59,24 +65,6 @@ function renderFilters() {
         
         filtersGrid.appendChild(filterTag);
     });
-}
-
-// Переключение видимости фильтров
-function toggleFilters() {
-    const container = document.getElementById('filtersContainer');
-    const toggleText = document.getElementById('toggleText');
-    
-    filtersExpanded = !filtersExpanded;
-    
-    if (filtersExpanded) {
-        container.classList.remove('collapsed');
-        container.classList.add('expanded');
-        toggleText.textContent = 'свернуть';
-    } else {
-        container.classList.remove('expanded');
-        container.classList.add('collapsed');
-        toggleText.textContent = 'развернуть';
-    }
 }
 
 // Рендер шипкидов
@@ -127,7 +115,6 @@ function renderShipkids() {
         
         // Клик по карточке (для будущих страниц персонажей)
         card.addEventListener('click', function() {
-            // Пока просто заглушка
             console.log('Открыть страницу:', shipkid.name);
         });
         
@@ -137,9 +124,6 @@ function renderShipkids() {
 
 // Настройка обработчиков событий
 function setupEventListeners() {
-    // Переключение фильтров
-    document.getElementById('toggleFilters').addEventListener('click', toggleFilters);
-    
     // Фильтры по родителям
     document.querySelectorAll('.filter-tag').forEach(tag => {
         tag.addEventListener('click', function() {
@@ -174,15 +158,6 @@ function setupEventListeners() {
         currentSearchTerm = e.target.value;
         renderShipkids();
     });
-
-    // Очистка фильтров
-    document.getElementById('clearFilters').addEventListener('click', function() {
-        selectedParents = [];
-        currentSearchTerm = "";
-        document.getElementById('searchInput').value = "";
-        updateFilterStates();
-        renderShipkids();
-    });
 }
 
 // Обновление состояния фильтров
@@ -198,27 +173,117 @@ function updateFilterStates() {
                 selectedParents.length === 2 && !selectedParents.includes(parent)
             );
         }
-    });
-
-    // Обновление информации о выбранных фильтрах
-    const infoElement = document.getElementById('selectedFiltersInfo');
-    if (selectedParents.length === 0) {
-        infoElement.textContent = "Выбрано: 0 родителей";
-    } else if (selectedParents.length === 1) {
-        infoElement.textContent = `Выбран: ${selectedParents[0]}`;
-    } else {
-        infoElement.textContent = `Выбраны: ${selectedParents.join(' и ')}`;
-    }
+    });  
 }
 
+// Настройка свайпа для десктопа
+function setupSwipe() {
+    const scrollContainer = document.getElementById('filtersScroll');
+    
+    scrollContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        scrollContainer.classList.add('grabbing');
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+    });
 
+    scrollContainer.addEventListener('mouseleave', () => {
+        isDragging = false;
+        scrollContainer.classList.remove('grabbing');
+    });
 
+    scrollContainer.addEventListener('mouseup', () => {
+        isDragging = false;
+        scrollContainer.classList.remove('grabbing');
+    });
 
+    scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2; // Умножаем для более плавного скролла
+        scrollContainer.scrollLeft = scrollLeft - walk;
+    });
 
+    // Отключаем стандартное поведение при клике на теги
+    scrollContainer.addEventListener('click', (e) => {
+        if (isDragging) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }, true);
+}
 
-
-
-
+// Управление мобильным поиском
+// Управление мобильным поиском
+function setupMobileSearch() {
+    const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+    const closeSearchBtn = document.getElementById('closeSearchBtn');
+    const searchInput = document.getElementById('searchInput');
+    const header = document.querySelector('.header');
+    const logo = document.querySelector('.logo');
+    
+    if (mobileSearchBtn && closeSearchBtn) {
+        // Открыть поиск
+        mobileSearchBtn.addEventListener('click', function() {
+            header.classList.add('search-active');
+            searchInput.focus();
+            // На мобильных скрываем логотип при поиске для экономии места
+            if (window.innerWidth <= 768) {
+                logo.style.opacity = '0';
+                logo.style.width = '0';
+                logo.style.overflow = 'hidden';
+            }
+        });
+        
+        // Закрыть поиск
+        closeSearchBtn.addEventListener('click', function() {
+            header.classList.remove('search-active');
+            searchInput.value = '';
+            currentSearchTerm = '';
+            renderShipkids();
+            
+            // Возвращаем логотип
+            logo.style.opacity = '';
+            logo.style.width = '';
+            logo.style.overflow = '';
+        });
+        
+        // Закрыть поиск при нажатии Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && header.classList.contains('search-active')) {
+                header.classList.remove('search-active');
+                searchInput.value = '';
+                currentSearchTerm = '';
+                renderShipkids();
+                
+                // Возвращаем логотип
+                logo.style.opacity = '';
+                logo.style.width = '';
+                logo.style.overflow = '';
+            }
+        });
+        
+        // Закрыть поиск при клике вне поисковой строки (только на мобильных)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && 
+                header.classList.contains('search-active') &&
+                !searchContainer.contains(e.target) && 
+                !mobileSearchBtn.contains(e.target)) {
+                
+                header.classList.remove('search-active');
+                searchInput.value = '';
+                currentSearchTerm = '';
+                renderShipkids();
+                
+                // Возвращаем логотип
+                logo.style.opacity = '';
+                logo.style.width = '';
+                logo.style.overflow = '';
+            }
+        });
+    }
+}
 
 // Аккордеон для FAQ
 document.addEventListener('DOMContentLoaded', function() {
