@@ -412,11 +412,11 @@ body {
     }
     
     .shipkid-card {
-        height: 130px;
+        height: 140px;
     }
     
     .shipkid-image {
-        height: 100px;
+        height: 110px;
     }
     
     .shipkid-name {
@@ -1152,9 +1152,20 @@ body {
     }
 }
 
+/* Основной стиль ссылки */
+a {
+    color: #9099EF; /* Основной цвет (как у text-heading) */
+    text-decoration: none; /* Убирает подчеркивание */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
 
+/* При наведении курсора */
+a:hover {
+    color: #BB86FC; /* Цвет при наведении (как у accent) */
+    text-decoration: underline; /* Добавляет подчеркивание при наведении */
+}
 
-
-
-
-
+/* Посещенная ссылка */
+a:visited {
+    color: #9D67E3; /* Цвет посещенной ссылки (немного темнее) */
+}
