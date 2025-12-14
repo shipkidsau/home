@@ -412,11 +412,11 @@ body {
     }
     
     .shipkid-card {
-        height: 130px;
+        height: 140px;
     }
     
     .shipkid-image {
-        height: 100px;
+        height: 110px;
     }
     
     .shipkid-name {
@@ -1151,6 +1151,7 @@ body {
         font-size: 1.2rem !important;
     }
 }
+
 
 
 
