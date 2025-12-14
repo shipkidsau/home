@@ -1,7 +1,7 @@
 // Данные шипкидов
 const shipkidsData = [
     { id: 1, name: "Абстракт", parents: ["Рипер", "Инк"], image: "images/abstract.jpg" },
-    { id: 2, name: "Алуреон", parents: ["Гено", "Эррор"], image: "images/alureon3.jpg", page: "/characters/alureon.html" },
+    { id: 2, name: "Алуреон", parents: ["Гено", "Эррор"], image: "images/alureon3.jpg", page: "/characters/alureon.html"  },
     { id: 3, name: "Анколи", parents: ["Рипер", "Гено"], image: "images/ankoli.jpg" },
     { id: 4, name: "Аномалия 64", parents: ["Эррор", "Киллер"], image: "images/anomaly64.jpg" },
     { id: 5, name: "Белладона", parents: ["Даст", "Ласт"], image: "images/belladonna.jpg" },
@@ -68,6 +68,7 @@ function renderFilters() {
 }
 
 // Рендер шипкидов
+// Рендер шипкидов
 function renderShipkids() {
     const grid = document.querySelector('.shipkids-grid');
     
@@ -113,9 +114,19 @@ function renderShipkids() {
             </div>
         `;
         
-        // Клик по карточке (для будущих страниц персонажей)
+        // Клик по карточке - переход на страницу персонажа
         card.addEventListener('click', function() {
-            console.log('Открыть страницу:', shipkid.name);
+            if (shipkid.page) {
+                console.log('Переходим на:', shipkid.page);
+                window.location.href = shipkid.page;
+            } else {
+                // Для шипкидов без указанной страницы создаем автоматически
+                const pageName = shipkid.name.toLowerCase()
+                    .replace(/ /g, '_')
+                    .replace(/[^a-zа-яё0-9_]/g, '') + '.html';
+                console.log('Автоматический переход на:', pageName);
+                window.location.href = pageName;
+            }
         });
         
         grid.appendChild(card);
@@ -306,3 +317,172 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Функционал для страницы персонажа
+document.addEventListener('DOMContentLoaded', function() {
+    setupCollapseSections();
+    setupMobileSearch();
+});
+
+// Настройка сворачивания разделов
+// Настройка сворачивания разделов - ОПТИМИЗИРОВАННАЯ ВЕРСИЯ
+function setupCollapseSections() {
+    const collapseButtons = document.querySelectorAll('.collapse-toggle');
+    
+    collapseButtons.forEach(button => {
+        const targetId = button.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        const parentSection = button.closest('.character-section-item');
+        
+        if (!targetContent) return;
+        
+        // Добавляем специальный класс для улучшенной анимации
+        targetContent.classList.add('animated-section');
+        
+        // Инициализируем состояние
+        if (parentSection.classList.contains('collapsed')) {
+            targetContent.style.maxHeight = '0px';
+            targetContent.style.opacity = '0';
+            targetContent.style.paddingTop = '0';
+            targetContent.style.paddingBottom = '0';
+            button.querySelector('.toggle-icon').style.transform = 'rotate(180deg)';
+        } else {
+            targetContent.style.maxHeight = 'none';
+            targetContent.style.opacity = '1';
+            button.querySelector('.toggle-icon').style.transform = 'rotate(0deg)';
+        }
+        
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            const icon = button.querySelector('.toggle-icon');
+            const isCollapsing = !parentSection.classList.contains('collapsed');
+            
+            // Отменяем любые текущие переходы
+            targetContent.style.transition = 'none';
+            
+            if (isCollapsing) {
+                // СВОРАЧИВАЕМ
+                const currentHeight = targetContent.scrollHeight;
+                
+                // Устанавливаем фиксированные значения для начала анимации
+                targetContent.style.maxHeight = currentHeight + 'px';
+                targetContent.style.opacity = '1';
+                
+                // Форсируем перерасчёт layout
+                void targetContent.offsetHeight;
+                
+                // Включаем анимацию и запускаем её
+                targetContent.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), ' +
+                                               'opacity 0.3s ease, ' +
+                                               'padding 0.4s ease';
+                
+                requestAnimationFrame(() => {
+                    targetContent.style.maxHeight = '0px';
+                    targetContent.style.opacity = '0';
+                    targetContent.style.paddingTop = '0';
+                    targetContent.style.paddingBottom = '0';
+                    parentSection.classList.add('collapsed');
+                    icon.style.transform = 'rotate(180deg)';
+                });
+                
+            } else {
+                // РАЗВОРАЧИВАЕМ
+                // Устанавливаем начальные значения
+                targetContent.style.maxHeight = '0px';
+                targetContent.style.opacity = '0';
+                targetContent.style.paddingTop = '';
+                targetContent.style.paddingBottom = '';
+                
+                // Форсируем перерасчёт layout
+                void targetContent.offsetHeight;
+                
+                // Временно снимаем ограничение для измерения
+                targetContent.style.maxHeight = 'none';
+                const fullHeight = targetContent.scrollHeight;
+                targetContent.style.maxHeight = '0px';
+                
+                // Включаем анимацию
+                targetContent.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), ' +
+                                               'opacity 0.3s ease 0.1s, ' +
+                                               'padding 0.4s ease';
+                
+                requestAnimationFrame(() => {
+                    targetContent.style.maxHeight = fullHeight + 'px';
+                    targetContent.style.opacity = '1';
+                    parentSection.classList.remove('collapsed');
+                    icon.style.transform = 'rotate(0deg)';
+                });
+                
+                // После завершения анимации
+                setTimeout(() => {
+                    if (!parentSection.classList.contains('collapsed') && 
+                        targetContent.style.maxHeight !== 'none') {
+                        targetContent.style.maxHeight = 'none';
+                    }
+                }, 400);
+            }
+            
+            // Обработчик завершения анимации сворачивания
+            if (isCollapsing) {
+                const onTransitionEnd = () => {
+                    if (parentSection.classList.contains('collapsed')) {
+                        targetContent.style.maxHeight = '0px';
+                    }
+                    targetContent.removeEventListener('transitionend', onTransitionEnd);
+                };
+                targetContent.addEventListener('transitionend', onTransitionEnd);
+            }
+        });
+        
+        // Клик по заголовку
+        const sectionHeader = button.closest('.section-header');
+        if (sectionHeader) {
+            sectionHeader.addEventListener('click', function(e) {
+                if (e.target !== button && !button.contains(e.target)) {
+                    button.click();
+                }
+            });
+        }
+    });
+}
+
+// Управление мобильным поиском (копируем из script.js)
+function setupMobileSearch() {
+    const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+    const closeSearchBtn = document.getElementById('closeSearchBtn');
+    const searchInput = document.getElementById('searchInput');
+    const header = document.querySelector('.header');
+    const logo = document.querySelector('.logo');
+    
+    if (mobileSearchBtn && closeSearchBtn) {
+        mobileSearchBtn.addEventListener('click', function() {
+            header.classList.add('search-active');
+            searchInput.focus();
+            if (window.innerWidth <= 768) {
+                logo.style.opacity = '0';
+                logo.style.width = '0';
+                logo.style.overflow = 'hidden';
+            }
+        });
+        
+        closeSearchBtn.addEventListener('click', function() {
+            header.classList.remove('search-active');
+            searchInput.value = '';
+            
+            logo.style.opacity = '';
+            logo.style.width = '';
+            logo.style.overflow = '';
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && header.classList.contains('search-active')) {
+                header.classList.remove('search-active');
+                searchInput.value = '';
+                
+                logo.style.opacity = '';
+                logo.style.width = '';
+                logo.style.overflow = '';
+            }
+        });
+    }
+}
