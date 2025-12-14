@@ -520,7 +520,7 @@ body {
 
 .support-btn {
     background: var(--text-heading);
-    color: var(--bg-primary);
+    color: var(--bg-primary) !important;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 20px;
@@ -1169,3 +1169,4 @@ a:hover {
 a:visited {
     color: #9D67E3; /* Цвет посещенной ссылки (немного темнее) */
 }
+
