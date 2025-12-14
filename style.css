@@ -382,7 +382,7 @@ body {
     }
     
     .shipkid-card {
-        height: 160px;
+        height: 150px;
     }
     
     .shipkid-image {
@@ -1169,4 +1169,5 @@ a:hover {
 a:visited {
     color: #9D67E3; /* Цвет посещенной ссылки (немного темнее) */
 }
+
 
