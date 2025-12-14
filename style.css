@@ -262,7 +262,7 @@ body {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    height: 160px;
+    height: 140px;
 }
 
 .shipkid-card:hover {
@@ -1151,5 +1151,6 @@ body {
         font-size: 1.2rem !important;
     }
 }
+
 
 
