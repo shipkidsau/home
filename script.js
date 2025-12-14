@@ -1,27 +1,31 @@
 // Данные шипкидов
 const shipkidsData = [
-    { id: 1, name: "Абстракт", parents: ["Рипер", "Инк"], image: "images/abstract.jpg" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.jpg", page: "characters/0.html" },
+    //{ id: 1, name: "Абстракт", parents: ["Рипер", "Инк"], image: "images/abstract.jpg" },
     { id: 2, name: "Алуреон", parents: ["Гено", "Эррор"], image: "images/alureon3.jpg", page: "/home/characters/alureon.html"  },
-    { id: 3, name: "Анколи", parents: ["Рипер", "Гено"], image: "images/ankoli.jpg" },
-    { id: 4, name: "Аномалия 64", parents: ["Эррор", "Киллер"], image: "images/anomaly64.jpg" },
+    //{ id: 3, name: "Анколи", parents: ["Рипер", "Гено"], image: "images/ankoli.jpg" },
+    //{ id: 4, name: "Аномалия 64", parents: ["Эррор", "Киллер"], image: "images/anomaly64.jpg" },
     { id: 5, name: "Белладона", parents: ["Даст", "Ласт"], image: "images/belladonna.jpg" },
-    { id: 6, name: "Кей", parents: ["Даст", "Ласт"], image: "images/kay.jpg" },
+    //{ id: 6, name: "Кей", parents: ["Даст", "Ласт"], image: "images/kay.jpg", page: "characters/kay.html" },
     { id: 7, name: "Кенза", parents: ["Даст", "Ласт"], image: "images/kenza.jpg" },
-    { id: 8, name: "Луна", parents: ["Рипер", "Гено"], image: "images/luna.jpg" },
-    { id: 9, name: "Маруи", parents: ["Рипер", "Гено"], image: "images/marui.jpg" },
-    { id: 10, name: "Номи", parents: ["Рипер", "Гено"], image: "images/nomi.jpg" },
-    { id: 11, name: "Рено", parents: ["Рипер", "Гено"], image: "images/reno.jpg" },
-    { id: 12, name: "Роуг", parents: ["Рипер", "Гено"], image: "images/rogue.jpg" },
-    { id: 13, name: "Сильвер", parents: ["Рипер", "Гено"], image: "images/silver.jpg" },
-    { id: 14, name: "Сорелл", parents: ["Рипер", "Гено"], image: "images/sorell.jpg" },
-    { id: 15, name: "Спарк", parents: ["Дрим", "Блу"], image: "images/spark.jpg" },
+    //{ id: 8, name: "Луна", parents: ["Рипер", "Гено"], image: "images/luna.jpg" },
+    //{ id: 9, name: "Маруи", parents: ["Рипер", "Гено"], image: "images/marui.jpg" },
+    //{ id: 10, name: "Номи", parents: ["Рипер", "Гено"], image: "images/nomi.jpg" },
+    //{ id: 11, name: "Рено", parents: ["Рипер", "Гено"], image: "images/reno.jpg" },
+    //{ id: 12, name: "Роуг", parents: ["Рипер", "Гено"], image: "images/rogue.jpg" },
+    { id: 13, name: "Сильвер", parents: ["Рипер", "Гено"], image: "/home/images/silver1.jpg" },
+    //{ id: 14, name: "Сорелл", parents: ["Рипер", "Гено"], image: "images/sorell.jpg" },
+    //{ id: 15, name: "Спарк", parents: ["Дрим", "Блу"], image: "images/spark.jpg" },
     { id: 16, name: "Старке", parents: ["Эпик", "Кросс"], image: "images/starke.jpg" },
     { id: 17, name: "Шарм", parents: ["Найтмер", "Ласт"], image: "images/charm.jpg" },
-    { id: 18, name: "Шейд", parents: ["Рипер", "Гено"], image: "images/shade.jpg" },
-    { id: 19, name: "Шэдоу", parents: ["Рипер", "Гено"], image: "images/shadow.jpg" },
-    { id: 20, name: "Экзолит", parents: ["Рипер", "Гено"], image: "images/exolite.jpg" },
-    { id: 21, name: "Эрген", parents: ["Рипер", "Гено"], image: "images/ergen.jpg" },
-    { id: 22, name: "Вермилион", parents: ["Фатал Эррор", "Лавендер"], image: "images/vermillion.jpg" }
+    //{ id: 18, name: "Шейд", parents: ["Рипер", "Гено"], image: "images/shade.jpg" },
+    //{ id: 19, name: "Шэдоу", parents: ["Рипер", "Гено"], image: "images/shadow.jpg" },
+    //{ id: 20, name: "Экзолит", parents: ["Рипер", "Гено"], image: "images/exolite.jpg" },
+    //{ id: 21, name: "Эрген", parents: ["Рипер", "Гено"], image: "images/ergen.jpg" },
+    { id: 22, name: "Вермилион", parents: ["Фатал Эррор", "Лавендер"], image: "/home/images/vermillion.jpg" },
+    { id: 23, name: "Стейн", parents: ["Найтмер", "Инк"], image: "images/stain0.jpg", page: "/home/characters/stain2.html" },
+    { id: 24, name: "Ирезуми", parents: ["Кросс", "Инк"], image: "images/0.jpg", page: "/home/characters/irezumi0.html" },
+    { id: 25, name: "Спиллед", parents: ["Эррор", "Инк"], image: "images/0.jpg", page: "/home/characters/spilledink.html" }
 ];
 
 // родители
@@ -486,4 +490,5 @@ function setupMobileSearch() {
         });
     }
 }
+
 
