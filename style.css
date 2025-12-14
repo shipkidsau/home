@@ -163,13 +163,13 @@ body {
 
 /* ФИЛЬТРЫ */
 .filters-section {
-    padding: 20px 0;
+    padding: 15px 0;
     background: var(--bg-primary);
 }
 
 .section-title {
     font-size: 1.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: var(--text-heading);
     text-align: center;
     font-weight: 700;
@@ -382,7 +382,7 @@ body {
     }
     
     .shipkid-card {
-        height: 140px;
+        height: 160px;
     }
     
     .shipkid-image {
@@ -412,7 +412,7 @@ body {
     }
     
     .shipkid-card {
-        height: 130px;
+        height: 140px;
     }
     
     .shipkid-image {
@@ -550,7 +550,7 @@ body {
 
 /* Стили для страницы FAQ */
 .faq-section {
-    padding: 40px 0;
+    padding: 15px 0;
     min-height: calc(100vh - 200px);
 }
 
@@ -657,4 +657,497 @@ body {
 /* Убирает голубое выделение при клике */
 * {
     -webkit-tap-highlight-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== СТРАНИЦА ПЕРСОНАЖА ===== */
+
+/* Заголовок персонажа */
+.character-title {
+    font-size: 2rem;
+    color: var(--text-heading);
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Основная информация с фото и прямоугольником */
+.character-main-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .character-main-info {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 30px
+    }
+}
+
+/* Контейнер для фото */
+.character-image-container {
+    width: 100%;
+}
+
+.character-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    aspect-ratio: 4/4;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .character-main-info {
+        /* 30% фото, 70% инфа */
+        grid-template-columns: 3fr 7fr;
+    }
+}
+
+/* Прямоугольник с ключевой информацией */
+.character-key-info {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 0px 10px 0px;
+    overflow: hidden;
+}
+
+/* Заголовок с кнопкой сворачивания */
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(144, 153, 239, 0.1);
+    border-bottom: 1px solid var(--border);
+}
+
+.info-header h2 {
+    font-size: 1.4rem;
+    color: var(--text-heading);
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Кнопка сворачивания */
+.collapse-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-heading);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.collapse-toggle:hover {
+    background: rgba(187, 134, 252, 0.1);
+    color: var(--accent);
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Контент (по умолчанию открыт) */
+.info-content {
+    padding: 20px;
+}
+
+/* Сетка для информации в строчку */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+@media (min-width: 480px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between; /* ← Метка слева, значение справа */
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.info-label {
+    flex-shrink: 0; /* ← Не сжимается */
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-heading);
+    white-space: nowrap;
+}
+
+.info-value {
+    flex-grow: 1; /* ← Занимает всё доступное пространство */
+    text-align: right; /* ← Текст по правому краю */
+    color: var(--text-primary);
+    word-break: break-word;
+    min-width: 0; /* ← Разрешает перенос */
+}
+
+/* Разделы персонажа */
+.character-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.character-section-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.character-section-item:hover {
+    border-color: var(--accent);
+}
+
+/* Заголовок раздела */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.section-header:hover {
+    background: rgba(187, 134, 252, 0.05);
+}
+
+.section-header h2 {
+    font-size: 1.3rem;
+    color: var(--text-heading);
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Содержимое раздела */
+.section-content {
+    padding: 5px 20px 20px 20px;
+    max-height: none; /* По умолчанию открыты */
+    overflow: hidden;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Контент внутри разделов */
+.section-content p {
+    margin: 0 0 10px 0;
+}
+
+.section-content p:last-child {
+    margin-bottom: 0;
+}
+
+.section-content ul {
+    padding-left: 20px;
+    margin: 0 0 10px 0;
+}
+
+.section-content li {
+    margin-bottom: 8px;
+}
+
+.section-content li:last-child {
+    margin-bottom: 0;
+}
+
+/* Стили для изображения референса */
+.reference-section .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reference-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin: 0 auto;
+}
+
+.reference-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.reference-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Список ссылок */
+.links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-list li {
+    margin-bottom: 10px;
+}
+
+.links-list a {
+    color: var(--text-heading);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    word-break: break-all;
+}
+
+.links-list a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.links-list a::before {
+    content: "↗";
+    font-size: 0.9rem;
+}
+
+/* Опциональные разделы (скрываем, если пустые) */
+.optional-section:empty {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 767px) {
+    .character-title {
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    .character-main-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .character-image-container {
+        border-radius: 12px 12px 0 0;
+        overflow: hidden;
+        border-bottom: none;
+    }
+    
+    .character-key-info {
+        border-radius: 12px 12px 12px 12px;
+        margin-top: -1px; /* Убираем двойную границу */
+    }
+
+    .character-image {
+        border-radius: 12px 12px 0 0;
+        border-bottom: none;
+    }
+    
+    .character-key-info {
+        padding-top: 0; /* Убираем верхний padding прямоугольника */
+    }
+    
+    .info-header,
+    .section-header {
+        padding: 15px;
+    }
+    
+    .info-header h2,
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .info-content,
+    .section-content {
+        padding: 0 15px;
+    }
+    
+    .character-section-item.collapsed .section-content {
+        padding: 0 15px;
+    }
+    
+    .section-content {
+        padding: 0 15px 15px 15px;
+    }
+    
+    .reference-image {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .character-title {
+        font-size: 1.8rem;
+    }
+
+    .character-main-info {
+        gap: 0;
+    }
+    
+    .info-header,
+    .section-header {
+        padding: 12px;
+    }
+    
+    .info-header h2,
+    .section-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .info-content,
+    .section-content {
+        padding: 0 12px;
+        font-size: 0.95rem;
+    }
+    
+    .character-section-item.collapsed .section-content {
+        padding: 0 12px;
+    }
+    
+    .section-content {
+        padding: 0 12px 12px 12px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .character-main-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .character-image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        padding-top: 30px;
+    }
+    
+    .character-image {
+        width: 250px;
+        height: 250px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .character-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .character-key-info {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .character-main-info {
+        width: 100%;
+        display: block; /* или flex, но не grid */
+    }
+    
+    .character-key-info {
+        display: flex !important; /* ← FLEX ВМЕСТО GRID */
+        gap: 10px !important;
+        align-items: flex-start !important;
+        width: 100%;
+    }
+    
+    .character-image-container {
+        flex-shrink: 0; /* ← НЕ ДАЁТ СЖИМАТЬСЯ */
+        width: 300px;
+        padding: 10px 10px 10px 20px;
+    }
+    
+    .info-content {
+        flex-grow: 1; /* ← ЗАНИМАЕТ ВСЮ ОСТАВШУЮСЯ ШИРИНУ */
+        min-width: 0; 
+        width: auto;
+    }
+    
+    .character-image {
+        width: 100% !important;
+        max-width: 300px !important;
+        aspect-ratio: 1/1 !important;
+        position: sticky !important;
+        top: 100px !important;
+    }
+
+    .info-item {
+        margin-bottom: 12px !important;
+    }
+
+    .info-label {
+        font-size: 1.2rem !important;
+        min-width: 180px !important;
+        padding-right: 30px !important;
+    }
+    
+    .info-value {
+        font-size: 1.2rem !important;
+    }
 }
