@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Шипкиды</title>
 
-        <!-- Favicons -->
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
     <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -21,9 +21,15 @@
         <div class="container">
             <a href="index.html" class="logo">Шипкиды</a>
             <nav class="nav">
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <div class="search-container">
+                <a href="faq.html" class="nav-link faq-link">FAQ</a>
+                
+                <!-- Кнопка поиска для мобильных -->
+                <button class="mobile-search-btn" id="mobileSearchBtn">Поиск</button>
+                
+                <!-- Поисковая строка -->
+                <div class="search-container" id="searchContainer">
                     <input type="text" id="searchInput" placeholder="Найти ребёнка...">
+                    <button class="close-search-btn" id="closeSearchBtn">×</button>
                 </div>
             </nav>
         </div>
@@ -31,17 +37,11 @@
 
     <section class="filters-section">
         <div class="container">
-            <div class="filters-header">
-                <h2 class="section-title">Родители:</h2>
-                <button id="toggleFilters" class="toggle-btn">
-                    <span id="toggleText">свернуть</span>
-                    <span class="arrow">▼</span>
-                </button>
-            </div>
-            
-            <div id="filtersContainer" class="filters-container expanded">
-                <div class="filters-grid">
-                    <!-- Теги родителей будут здесь -->
+            <div class="filters-wrapper">
+                <div class="filters-scroll-container" id="filtersScroll">
+                    <div class="filters-grid">
+                        <!-- Теги родителей будут здесь -->
+                    </div>
                 </div>
             </div>
         </div>
