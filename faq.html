@@ -5,24 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Шипкиды</title>
 
-    <link rel="apple-touch-icon"  sizes= "57x57"  href= "apple-icon-57x57.png" > 
-    <link rel="apple-touch-icon"  sizes= "60x60"  href= "apple-icon-60x60.png" > 
-    <link rel="apple-touch-icon"  sizes= "72x72"  href= "apple-icon-72x72.png" > 
-    <link rel="apple-touch-icon"  sizes= "76x76"  href= "apple-icon-76x76.png" > 
-    <link rel="apple-touch-icon"  sizes= "114x114"  href= "apple-icon-114x114.png" > 
-    <link rel="apple-touch-icon"  sizes= "120x120"  href= "apple-icon-120x120.png" > 
-    <link rel="apple-touch-icon"  sizes= "144x144"  href= "apple-icon-144x144.png" > 
-    <link rel="apple-touch-icon"  sizes= "152x152"  href= "apple-icon-152x152.png" > 
-    <link rel="apple-touch-icon"  sizes= "180x180"  href= "apple-icon-180x180.png" > 
-    <link rel="icon"  type= "image/png"  sizes= "192x192"   href= "android-icon-192x192.png" > 
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <link rel="icon"  type= "image/png"  sizes= "32x32"  href= "favicon-32x32.png" > 
-    <link rel="icon"  type= "image/png"  sizes= "96x96"  href= "favicon-96x96.png" > 
-    <link rel="icon"  type= "image/png"  sizes= "16x16"  href= "favicon-16x16.png" > 
-    <link rel="manifest"  href= "manifest.json" > 
-    <meta name="msapplication-TileColor"  content= "#ffffff" > 
-    <meta name="msapplication-TileImage"  content= "/ms-icon-144x144.png" > 
-    <meta name="theme-color"  content= "#ffffff" >
+        <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0F0F23">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -31,18 +20,6 @@
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">Шипкиды</a>
-            <nav class="nav">
-                <a href="faq.html" class="nav-link faq-link active">FAQ</a>
-                
-                <!-- Кнопка поиска для мобильных -->
-                <button class="mobile-search-btn" id="mobileSearchBtn">Поиск</button>
-                
-                <!-- Поисковая строка -->
-                <div class="search-container" id="searchContainer">
-                    <input type="text" id="searchInput" placeholder="Найти ребёнка...">
-                    <button class="close-search-btn" id="closeSearchBtn">×</button>
-                </div>
-            </nav>
         </div>
     </header>
 
@@ -53,6 +30,16 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
+                        <span>Кто такие шипкиды?</span>
+                        <span class="faq-toggle">ᨆ</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Шипкиды - это вымышленные персонажи, которые являются детьми от романтических пар (так называемых "шипов"). Они могут быть созданы как естественным путём, так и в результате слияния магий двух или более персонажей.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
                         <span>Какова цель данного сайта?</span>
                         <span class="faq-toggle">ᨆ</span>
                     </div>
@@ -60,6 +47,16 @@
                         <p>Цель данного сайта собрать в одном месте как можно больше созданных в фандоме шипкидов и рассказать о них, чтобы ничье творчество и ничей ребёнок не был забыт.</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как пользоваться сайтом?</span>
+                        <span class="faq-toggle">ᨆ</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>На главной странице вы можете фильтровать шипкидов по родителям. Выберите одного или двух родителей, чтобы увидеть их детей.</p>
+                    </div>
+                </div>               
 
                 <div class="faq-item">
                     <div class="faq-question">
@@ -98,6 +95,17 @@
                     </div>
                     <div class="faq-answer">
                         <p>Нет, это является неуважением к оригинальному автору. Вы всегда можете создать своего персонажа, не присваивая себе чужих.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как я могу помочь проекту?</span>
+                        <span class="faq-toggle">ᨆ</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Вы можете предлагать идеи, указывать на ошибки и осведомлять об отсутствующих на сайте персонажах, которых вы бы хотели видеть, связавшись с нами через почту <a href="mailto:xikkamao@gmail.com" class="footer-email">
+                    xikkamao@gmail.com</a>. Также вы можете помочь нам материально, если имеется таковое желание. Пожертвования являются добровольными и не влияют на функционал сайта.</p>
                     </div>
                 </div>
             </div>
