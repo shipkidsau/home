@@ -24,7 +24,7 @@ const shipkidsData = [
     //{ id: 21, name: "Эрген", parents: ["Рипер", "Гено"], image: "images/ergen.jpg" },
     //{ id: 22, name: "Вермилион", parents: ["Фатал Эррор", "Лавендер"], image: "/home/images/vermillion.jpg" },
     { id: 23, name: "Стейн", parents: ["Найтмер", "Инк"], image: "images/stain2.jpg", page: "/home/characters/stain.html" },
-    { id: 24, name: "Ирезуми", parents: ["Кросс", "Инк"], image: "images/irezumi0.jpg", page: "/home/characters/irezumi.html" },
+    { id: 24, name: "Ирезуми", parents: ["Кросс", "Инк"], image: "images/irezumi0.png", page: "/home/characters/irezumi.html" },
     //{ id: 25, name: "Спиллед", parents: ["Эррор", "Инк"], image: "images/0.jpg", page: "/home/characters/spilledink.html" },
     { id: 26, name: "Радиер", parents: ["Найтмер", "Эррор"], image: "images/radier0.jpg", page: "/homecharacters/radier.html" }
 ];
@@ -491,6 +491,7 @@ function setupMobileSearch() {
         });
     }
 }
+
 
 
 
