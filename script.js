@@ -5,7 +5,7 @@ const shipkidsData = [
     { id: 2, name: "Алуреон", parents: ["Гено", "Эррор"], image: "images/alureon3.jpg", page: "/home/characters/alureon.html"  },
     //{ id: 3, name: "Анколи", parents: ["Рипер", "Гено"], image: "images/ankoli.jpg" },
     //{ id: 4, name: "Аномалия 64", parents: ["Эррор", "Киллер"], image: "images/anomaly64.jpg" },
-    { id: 5, name: "Белладона", parents: ["Даст", "Ласт"], image: "images/belladonna.jpg", page: "/home/characters/belladonna.html"  },
+    { id: 5, name: "Белладона", parents: ["Даст", "Ласт"], image: "images/belladonna0.png", page: "/home/characters/belladonna.html"  },
     //{ id: 6, name: "Кей", parents: ["Даст", "Ласт"], image: "images/kay.jpg", page: "characters/kay.html" },
     { id: 7, name: "Кенза", parents: ["Даст", "Ласт"], image: "images/kenza3.jpg", page: "/home/characters/kenza.html" },
     //{ id: 8, name: "Луна", parents: ["Рипер", "Гено"], image: "images/luna.jpg" },
@@ -491,6 +491,7 @@ function setupMobileSearch() {
         });
     }
 }
+
 
 
 
