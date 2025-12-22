@@ -334,6 +334,11 @@ body {
         justify-content: flex-end;
         flex-grow: 1;
     }
+
+    /* На мобильных: скрываем поисковую строку, показываем кнопку */
+    .mobile-search-btn {
+        display: block;
+    }
     
     .search-container {
         display: none;
@@ -1164,6 +1169,7 @@ a:hover {
 a:visited {
     color: #9D67E3; /* Цвет посещенной ссылки (немного темнее) */
 }
+
 
 
 
