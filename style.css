@@ -334,11 +334,6 @@ body {
         flex-grow: 1;
     }
     
-    /* На мобильных: скрываем поисковую строку, показываем кнопку */
-    .mobile-search-btn {
-        display: block;
-    }
-    
     .search-container {
         display: none;
         position: absolute;
@@ -382,11 +377,11 @@ body {
     }
     
     .shipkid-card {
-        height: 150px;
+        height: 160px;
     }
     
     .shipkid-image {
-        height: 100px;
+        height: 110px;
     }
 }
 
@@ -412,7 +407,7 @@ body {
     }
     
     .shipkid-card {
-        height: 140px;
+        height: 150px;
     }
     
     .shipkid-image {
@@ -1168,6 +1163,7 @@ a:hover {
 a:visited {
     color: #9D67E3; /* Цвет посещенной ссылки (немного темнее) */
 }
+
 
 
 
