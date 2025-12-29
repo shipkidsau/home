@@ -28,7 +28,7 @@ const shipkidsData = [
     //{ id: 25, name: "Спиллед", parents: ["Эррор", "Инк"], image: "images/0.jpg", page: "/home/characters/spilledink.html" },
     { id: 26, name: "Радиер", parents: ["Найтмер", "Эррор"], image: "images/radier0.jpg", page: "/home/characters/radier.html" },
     { id: 27, name: "Клаудберри", parents: ["Дрим", "Блу"], image: "images/cloudberry0.png", page: "characters/cloudberry.html" },
-    //{ id: 28, name: "Мерсилесс", parents: ["Найтмер", "Киллер"], image: "images/merciless0.jpg", page: "characters/merciless.html" },
+    { id: 28, name: "Мерсилесс", parents: ["Найтмер", "Киллер"], image: "images/merciless0.jpg", page: "characters/merciless.html" },
     //{ id: 29, name: "Карамель", parents: ["Рипер", "Гено"], image: "images/0.jpg", page: "characters/caramel.html" }
 ];
 
@@ -494,6 +494,7 @@ function setupMobileSearch() {
         });
     }
 }
+
 
 
 
