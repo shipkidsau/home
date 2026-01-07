@@ -14,7 +14,7 @@ const shipkidsData = [
     //{ id: 11, name: "Рено", parents: ["Рипер", "Гено"], image: "images/reno.jpg" },
     //{ id: 12, name: "Роуг", parents: ["Рипер", "Гено"], image: "images/rogue.jpg" },
     { id: 13, name: "Сильвер", parents: ["Рипер", "Гено"], image: "/home/images/silver1.jpg", page: "/home/characters/silver.html"},
-    //{ id: 14, name: "Сорелл", parents: ["Рипер", "Гено"], image: "images/sorell.jpg" },
+    { id: 14, name: "Сорелл", parents: ["Рипер", "Гено"], image: "images/sorell0.jpg", page: "/home/characters/sorell.html" },
     //{ id: 15, name: "Спарк", parents: ["Дрим", "Блу"], image: "images/spark.jpg" },
     //{ id: 16, name: "Старке", parents: ["Эпик", "Кросс"], image: "images/starke.jpg" },
     //{ id: 17, name: "Шарм", parents: ["Найтмер", "Ласт"], image: "images/charm.jpg" },
@@ -494,6 +494,7 @@ function setupMobileSearch() {
         });
     }
 }
+
 
 
 
