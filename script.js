@@ -25,11 +25,12 @@ const shipkidsData = [
     //{ id: 22, name: "Вермилион", parents: ["Фатал Эррор", "Лавендер"], image: "/home/images/vermillion.jpg" },
     { id: 23, name: "Стейн", parents: ["Найтмер", "Инк"], image: "images/stain2.jpg", page: "/home/characters/stain.html" },
     { id: 24, name: "Ирезуми", parents: ["Кросс", "Инк"], image: "images/irezumi0.png", page: "/home/characters/irezumi.html" },
-    //{ id: 25, name: "Спиллед", parents: ["Эррор", "Инк"], image: "images/0.jpg", page: "/home/characters/spilledink.html" },
+    //{ id: 25, name: "Спиллединк", parents: ["Эррор", "Инк"], image: "images/0.jpg", page: "/home/characters/spilledink.html" },
     { id: 26, name: "Радиер", parents: ["Найтмер", "Эррор"], image: "images/radier0.jpg", page: "/home/characters/radier.html" },
     { id: 27, name: "Клаудберри", parents: ["Дрим", "Блу"], image: "images/cloudberry0.png", page: "characters/cloudberry.html" },
     { id: 28, name: "Мерсилесс", parents: ["Найтмер", "Киллер"], image: "images/merciless0.jpg", page: "characters/merciless.html" },
-    //{ id: 29, name: "Карамель", parents: ["Рипер", "Гено"], image: "images/0.jpg", page: "characters/caramel.html" }
+    //{ id: 29, name: "Карамель", parents: ["Рипер", "Гено"], image: "images/0.jpg", page: "characters/caramel.html" },
+    //{ id: 30, name: "Моку", parents: ["Кросс", "Инк"], image: "images/0.jpg", page: "characters/moku.html" }
 ];
 
 // родители
@@ -494,6 +495,7 @@ function setupMobileSearch() {
         });
     }
 }
+
 
 
 
