@@ -10,7 +10,7 @@ const shipkidsData = [
     { id: 7, name: "Кенза", parents: ["Даст", "Ласт"], image: "images/kenza3.jpg", page: "/home/characters/kenza.html" },
     //{ id: 8, name: "Луна", parents: ["Рипер", "Гено"], image: "images/luna.jpg" },
     //{ id: 9, name: "Маруи", parents: ["Рипер", "Гено"], image: "images/marui.jpg" },
-    //{ id: 10, name: "Номи", parents: ["Рипер", "Гено"], image: "images/nomi.jpg" },
+    //{ id: 10, name: "Номи", parents: ["Рипер", "Гено"], image: "images/nomi.jpg", page: "/home/characters/nomi.html" },
     //{ id: 11, name: "Рено", parents: ["Рипер", "Гено"], image: "images/reno.jpg" },
     //{ id: 12, name: "Роуг", parents: ["Рипер", "Гено"], image: "images/rogue.jpg" },
     { id: 13, name: "Сильвер", parents: ["Рипер", "Гено"], image: "/home/images/silver1.jpg", page: "/home/characters/silver.html"},
@@ -30,7 +30,8 @@ const shipkidsData = [
     { id: 27, name: "Клаудберри", parents: ["Дрим", "Блу"], image: "images/cloudberry0.png", page: "characters/cloudberry.html" },
     { id: 28, name: "Мерсилесс", parents: ["Найтмер", "Киллер"], image: "images/merciless0.jpg", page: "characters/merciless.html" },
     //{ id: 29, name: "Карамель", parents: ["Рипер", "Гено"], image: "images/0.jpg", page: "characters/caramel.html" },
-    //{ id: 30, name: "Моку", parents: ["Кросс", "Инк"], image: "images/0.jpg", page: "characters/moku.html" }
+    //{ id: 30, name: "Моку", parents: ["Кросс", "Инк"], image: "images/0.jpg", page: "characters/moku.html" },
+    //{ id: 31, name: "Сидереус", parents: ["Кросс", "Дрим"], image: "images/0.jpg", page: "home/characters/sidereus.html" }
 ];
 
 // родители
