@@ -318,8 +318,6 @@ body {
 
 .optional-section .reference-image p {
     margin-top: 12px;
-    font-style: italic;
-    color: var(--text-heading);
 }
 
 /* Футер */
