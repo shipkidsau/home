@@ -30,7 +30,7 @@ body {
     padding: 0 16px;
 }
 
-/* Шапка - ВСЕГДА В ОДНОЙ СТРОКЕ */
+/* Шапка */
 .header {
     background: var(--bg-secondary);
     border-bottom: 1px solid var(--border);
@@ -304,7 +304,25 @@ body {
     margin: 0;
 }
 
-/* Подвал */
+/* Стиль для раздела "Другие версии" */
+.optional-section .reference-image {
+    border: none !important;
+    text-align: center;
+}
+
+.optional-section .reference-image img {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.optional-section .reference-image p {
+    margin-top: 12px;
+    font-style: italic;
+    color: var(--text-heading);
+}
+
+/* Футер */
 .footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border);
