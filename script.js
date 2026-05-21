@@ -10,7 +10,7 @@ const shipkidsData = [
     { id: 7, name: "Кенза", parents: ["Даст", "Ласт"], image: "images/kenza3.jpg", page: "/home/characters/kenza.html" },
     //{ id: 8, name: "Луна", parents: ["Рипер", "Гено"], image: "images/luna.jpg" },
     //{ id: 9, name: "Маруи", parents: ["Рипер", "Гено"], image: "images/marui.jpg" },
-    //{ id: 10, name: "Номи", parents: ["Рипер", "Гено"], image: "images/nomi.jpg", page: "/home/characters/nomi.html" },
+    { id: 10, name: "Номи", parents: ["Рипер", "Гено"], image: "images/nomi0.webp", page: "/home/characters/nomi.html" },
     //{ id: 11, name: "Рено", parents: ["Рипер", "Гено"], image: "images/reno.jpg" },
     //{ id: 12, name: "Роуг", parents: ["Рипер", "Гено"], image: "images/rogue.jpg" },
     { id: 13, name: "Сильвер", parents: ["Рипер", "Гено"], image: "/home/images/silver1.jpg", page: "/home/characters/silver.html"},
