@@ -31,7 +31,7 @@ const shipkidsData = [
     { id: 28, name: "Мерсилесс", parents: ["Найтмер", "Киллер"], image: "images/merciless0.jpg", page: "characters/merciless.html" },
     //{ id: 29, name: "Карамель", parents: ["Рипер", "Гено"], image: "images/0.jpg", page: "characters/caramel.html" },
     //{ id: 30, name: "Моку", parents: ["Кросс", "Инк"], image: "images/0.jpg", page: "characters/moku.html" },
-    //{ id: 31, name: "Сидереус", parents: ["Кросс", "Дрим"], image: "images/0.jpg", page: "home/characters/sidereus.html" }
+    { id: 31, name: "Сидереус", parents: ["Кросс", "Дрим"], image: "images/sidereus0.webp", page: "home/characters/sidereus.html" }
 ];
 
 // родители
