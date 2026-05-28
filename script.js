@@ -1,6 +1,6 @@
 // Данные шипкидов
 const shipkidsData = [
-    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.jpg", page: "characters/0.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
     //{ id: 1, name: "Абстракт", parents: ["Рипер", "Инк"], image: "images/abstract.jpg" },
     { id: 2, name: "Алуреон", parents: ["Гено", "Эррор"], image: "images/alureon3.jpg", page: "/home/characters/alureon.html"  },
     //{ id: 3, name: "Анколи", parents: ["Рипер", "Гено"], image: "images/ankoli.jpg" },
@@ -33,6 +33,25 @@ const shipkidsData = [
     { id: 30, name: "Моку", parents: ["Кросс", "Инк"], image: "images/moku0.webp", page: "/home/characters/moku.html" },
     { id: 31, name: "Сидереус", parents: ["Кросс", "Дрим"], image: "images/sidereus0.webp", page: "/home/characters/sidereus.html" },
     { id: 32, name: "Найтэл", parents: ["Найтмер", "Мэл"], image: "images/nightel0.webp", page: "/home/characters/nightel.html" }
+    //{ id: 33, name: "Старвей", parents: ["Оутер", "Блу"], image: "images/starway0.webp", page: "/home/characters/starway.html" },
+    //{ id: 34, name: "Кресцент", parents: ["Найтмер", "Киллер"], image: "images/crescent0.webp", page: "/home/characters/crescent.html" },
+    //{ id: 35, name: "Старкросс", parents: ["Кросс", "Дрим"], image: "images/starcross0.webp", page: "/home/characters/starcross.html" },
+    //{ id: 36, name: "Сэлвейдж", parents: ["Рипер", "Гено"], image: "images/salvage0.webp", page: "/home/characters/salvage.html" },
+    //{ id: 37, name: "Гуффе", parents: ["Эррор", "Инк"], image: "images/guffe0.webp", page: "/home/characters/guffe.html" },
+    //{ id: 38, name: "Лифэл", parents: ["Рипер", "Фатал Эррор"], image: "images/lethal0.webp", page: "/home/characters/lethal.html" },
+    //{ id: 39, name: "Алоэ", parents: ["Хоррор", "Фарм"], image: "images/aloe0.webp", page: "/home/characters/aloe.html" },
+    //{ id: 40, name: "Литмус", parents: ["Хоррор", "Фарм"], image: "images/litmus0.webp", page: "/home/characters/litmus.html" },
+    //{ id: 41, name: "Нарцисс", parents: ["Хоррор", "Фарм"], image: "images/narcissus0.webp", page: "/home/characters/narcissus.html" },
+    //{ id: 42, name: "Нави", parents: ["Оутер", "Гено"], image: "images/navi0.webp", page: "/home/characters/navi.html" },
+    //{ id: 43, name: "Грейп", parents: ["Рипер", "Гено"], image: "images/greape0.webp", page: "/home/characters/greape.html" },
+    //{ id: 44, name: "Блупринт", parents: ["Блу", "Инк"], image: "images/blueprint0.webp", page: "/home/characters/blueprint.html" },
+    //{ id: 45, name: "Спринкл", parents: ["Даст", "Блу"], image: "images/sprinkle0.webp", page: "/home/characters/sprinkle.html" },
+    //{ id: 46, name: "Гиро", parents: ["Рипер", "Гено"], image: "images/gyro0.webp", page: "/home/characters/gyro.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
 ];
 
 // родители
