@@ -42,7 +42,7 @@ const shipkidsData = [
     //{ id: 39, name: "Алоэ", parents: ["Хоррор", "Фарм"], image: "images/aloe0.webp", page: "/home/characters/aloe.html" },
     //{ id: 40, name: "Литмус", parents: ["Хоррор", "Фарм"], image: "images/litmus0.webp", page: "/home/characters/litmus.html" },
     //{ id: 41, name: "Нарцисс", parents: ["Хоррор", "Фарм"], image: "images/narcissus0.webp", page: "/home/characters/narcissus.html" },
-    //{ id: 42, name: "Нави", parents: ["Оутер", "Гено"], image: "images/navi0.webp", page: "/home/characters/navi.html" },
+    { id: 42, name: "Нави", parents: ["Оутер", "Гено"], image: "images/navi0.webp", page: "/home/characters/navi.html" },
     //{ id: 43, name: "Грейп", parents: ["Рипер", "Гено"], image: "images/greape0.webp", page: "/home/characters/greape.html" },
     //{ id: 44, name: "Блупринт", parents: ["Блу", "Инк"], image: "images/blueprint0.webp", page: "/home/characters/blueprint.html" },
     //{ id: 45, name: "Спринкл", parents: ["Даст", "Блу"], image: "images/sprinkle0.webp", page: "/home/characters/sprinkle.html" },
