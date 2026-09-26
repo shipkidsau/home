@@ -47,8 +47,8 @@ const shipkidsData = [
     //{ id: 44, name: "Блупринт", parents: ["Блу", "Инк"], image: "images/blueprint0.webp", page: "/home/characters/blueprint.html" },
     //{ id: 45, name: "Спринкл", parents: ["Даст", "Блу"], image: "images/sprinkle0.webp", page: "/home/characters/sprinkle.html" },
     //{ id: 46, name: "Гиро", parents: ["Рипер", "Гено"], image: "images/gyro0.webp", page: "/home/characters/gyro.html" },
-    { id: 47, name: "Мут", parents: ["Рипер", "Гено"], image: "images/mute0.webp", page: "/home/characters/mute.html" }
-    //{ id: 48, name: "0", parents: ["Гено", "Инк"], image: "images/ichorhavoc0.webp", page: "/home/characters/ichor_havoc.html" },
+    { id: 47, name: "Мут", parents: ["Рипер", "Гено"], image: "images/mute0.webp", page: "/home/characters/mute.html" },
+    { id: 48, name: "Айхор Хавок", parents: ["Гено", "Инк"], image: "images/ichorhavoc0.webp", page: "/home/characters/ichor_havoc.html" }
     //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
     //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
     //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
