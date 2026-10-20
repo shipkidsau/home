@@ -49,6 +49,10 @@ const shipkidsData = [
     //{ id: 46, name: "Гиро", parents: ["Рипер", "Гено"], image: "images/gyro0.webp", page: "/home/characters/gyro.html" },
     { id: 47, name: "Мут", parents: ["Рипер", "Гено"], image: "images/mute0.webp", page: "/home/characters/mute.html" },
     { id: 48, name: "Айхор Хавок", parents: ["Гено", "Инк"], image: "images/ichorhavoc0.webp", page: "/home/characters/ichor_havoc.html" }
+    //{ id: 49, name: "Софизм", parents: ["Эррор", "Гено"], image: "images/sophism0.webp", page: "/home/characters/sophism.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
+    //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
     //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
     //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
     //{ id: 0, name: "0", parents: ["0", "0"], image: "images/0.webp", page: "/home/characters/0.html" },
@@ -98,7 +102,6 @@ function renderFilters() {
 }
 
 // Рендер шипкидов
-// Рендер шипкидов
 function renderShipkids() {
     const grid = document.querySelector('.shipkids-grid');
     
@@ -111,10 +114,10 @@ function renderShipkids() {
         let matchesParents = true;
         if (selectedParents.length > 0) {
             if (selectedParents.length === 1) {
-                // Один родитель - показываем всех детей этого родителя
+                // Один родитель, показываем всех детей этого родителя
                 matchesParents = shipkid.parents.includes(selectedParents[0]);
             } else if (selectedParents.length === 2) {
-                // Два родителя - точное совпадение
+                // Два родителя, точное совпадение
                 matchesParents = selectedParents.every(parent => 
                     shipkid.parents.includes(parent)
                 );
@@ -150,7 +153,7 @@ function renderShipkids() {
                 console.log('Переходим на:', shipkid.page);
                 window.location.href = shipkid.page;
             } else {
-                // Для шипкидов без указанной страницы создаем автоматически
+                // Для шипкидов без указанной страницы создается автоматически
                 const pageName = shipkid.name.toLowerCase()
                     .replace(/ /g, '_')
                     .replace(/[^a-zа-яё0-9_]/g, '') + '.html';
@@ -256,7 +259,6 @@ function setupSwipe() {
 }
 
 // Управление мобильным поиском
-// Управление мобильным поиском
 function setupMobileSearch() {
     const mobileSearchBtn = document.getElementById('mobileSearchBtn');
     const closeSearchBtn = document.getElementById('closeSearchBtn');
@@ -354,7 +356,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Настройка сворачивания разделов
-// Настройка сворачивания разделов - ОПТИМИЗИРОВАННАЯ ВЕРСИЯ
 function setupCollapseSections() {
     const collapseButtons = document.querySelectorAll('.collapse-toggle');
     
@@ -476,7 +477,7 @@ function setupCollapseSections() {
     });
 }
 
-// Управление мобильным поиском (копируем из script.js)
+// Управление мобильным поиском
 function setupMobileSearch() {
     const mobileSearchBtn = document.getElementById('mobileSearchBtn');
     const closeSearchBtn = document.getElementById('closeSearchBtn');
@@ -516,17 +517,3 @@ function setupMobileSearch() {
         });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
