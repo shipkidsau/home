@@ -34,7 +34,7 @@ const shipkidsData = [
     { id: 31, name: "Сидереус", parents: ["Кросс", "Дрим"], image: "images/sidereus0.webp", page: "/home/characters/sidereus.html" },
     { id: 32, name: "Найтэл", parents: ["Найтмер", "Мэл"], image: "images/nightel0.webp", page: "/home/characters/nightel.html" },
     //{ id: 33, name: "Старвей", parents: ["Оутер", "Блу"], image: "images/starway0.webp", page: "/home/characters/starway.html" },
-    //{ id: 34, name: "Кресцент", parents: ["Найтмер", "Киллер"], image: "images/crescent0.webp", page: "/home/characters/crescent.html" },
+    { id: 34, name: "Кресент", parents: ["Найтмер", "Киллер"], image: "images/crescent0.webp", page: "/home/characters/crescent.html" },
     //{ id: 35, name: "Старкросс", parents: ["Кросс", "Дрим"], image: "images/starcross0.webp", page: "/home/characters/starcross.html" },
     //{ id: 36, name: "Сэлвейдж", parents: ["Рипер", "Гено"], image: "images/salvage0.webp", page: "/home/characters/salvage.html" },
     //{ id: 37, name: "Гуффе", parents: ["Эррор", "Инк"], image: "images/guffe0.webp", page: "/home/characters/guffe.html" },
